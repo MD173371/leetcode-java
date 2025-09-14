@@ -1,10 +1,11 @@
 class Solution {
     public int[] getConcatenation(int[] nums) {
-        int[] concat = new int[nums.length * 2];
-        for(int i = 0; i < nums.length; i++)
-        {
-            concat[i] = nums[i];
-            concat[i + nums.length] = nums[i];
-        }
+        int n = nums.length;
+        int[] concat = new int[n * 2];
+        
+        System.arraycopy(nums, 0, concat, 0, n);
+        System.arraycopy(nums, 0, concat, n, n);
+
         return concat;
     }
+}
